@@ -62,6 +62,4 @@ class ContainerManager
 
         return $productRepository->findOneBy(array('id' => $id));
     }
-
-
 }
