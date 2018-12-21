@@ -75,8 +75,10 @@ class ContainerController extends AbstractController
      */
     public function product(ContainerManager $containerManager)
     {
-        return $this->render('container/index.html.twig', [
+        $products = $containerManager->findAllProducts();
 
+        return $this->render('container/products.html.twig', [
+            'products' => $products,
         ]);
     }
 
@@ -85,8 +87,10 @@ class ContainerController extends AbstractController
      */
     public function oneProduct($id, ContainerManager $containerManager)
     {
-        return $this->render('container/index.html.twig', [
-            'id' => $id,
+        $product = $containerManager->findOneProduct($id);
+
+        return $this->render('container/oneproduct.html.twig', [
+            'product' => $product,
         ]);
     }
 
