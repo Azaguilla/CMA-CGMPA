@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Containership;
 use App\Services\ContainerManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -91,6 +92,32 @@ class ContainerController extends AbstractController
 
         return $this->render('container/oneproduct.html.twig', [
             'product' => $product,
+        ]);
+    }
+
+    /**
+     * @Route("/containership/new")
+     */
+    public function addContainership(ContainerManager $containerManager)
+    {
+
+        $containership = new Containership();
+
+        $containership->setCaptainName("Mary");
+        $containership->setContainerLimit("4553");
+        $containership->setName("Bloody Mary");
+        //$new = $containerManager->addContainer();
+
+        $em = $this->getDoctrine()->getManager();
+
+        $em->persist($containership);
+
+        $em->flush();
+
+
+
+        return $this->render('container/oneproduct.html.twig', [
+            //'newContainer' => ,
         ]);
     }
 
