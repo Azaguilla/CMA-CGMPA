@@ -83,7 +83,7 @@ class ContainerProduct
     /**
      * @return \Container
      */
-    public function getContainer(): \Container
+    public function getContainer(): Container
     {
         return $this->container;
     }
@@ -91,7 +91,7 @@ class ContainerProduct
     /**
      * @param \Container $container
      */
-    public function setContainer(\Container $container): void
+    public function setContainer(Container $container): void
     {
         $this->container = $container;
     }
@@ -99,7 +99,7 @@ class ContainerProduct
     /**
      * @return \Product
      */
-    public function getProduct(): \Product
+    public function getProduct(): Product
     {
         return $this->product;
     }
@@ -107,7 +107,7 @@ class ContainerProduct
     /**
      * @param \Product $product
      */
-    public function setProduct(\Product $product): void
+    public function setProduct(Product $product): void
     {
         $this->product = $product;
     }
