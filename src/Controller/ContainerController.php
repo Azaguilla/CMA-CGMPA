@@ -27,7 +27,7 @@ class ContainerController extends AbstractController
      */
     public function listContainer(ContainerManager $containerManager)
     {
-        $listContainer = $containerManager->findAllContainer("Container");
+        $listContainer = $containerManager->findAll("Container");
 
 
         return $this->render('container/containers.html.twig', [
@@ -40,7 +40,7 @@ class ContainerController extends AbstractController
      */
     public function oneContainer($id, ContainerManager $containerManager)
     {
-        $container = $containerManager->findOneContainer($id, "Container");
+        $container = $containerManager->findOne($id, "Container");
 
         return $this->render('container/onecontainer.html.twig', [
             'container' => $container,
@@ -52,7 +52,7 @@ class ContainerController extends AbstractController
      */
     public function containerShip(ContainerManager $containerManager)
     {
-        $listContainer = $containerManager->findAllContainership();
+        $listContainer = $containerManager->findAll("Containership");
 
         return $this->render('container/containership.html.twig', [
             'listContainer' => $listContainer,
@@ -64,7 +64,7 @@ class ContainerController extends AbstractController
      */
     public function oneContainerShip($id, ContainerManager $containerManager)
     {
-        $container = $containerManager->findOneContainership($id);
+        $container = $containerManager->findOne($id, "Containership");
 
         return $this->render('container/onecontainership.html.twig', [
             'containership' => $container,
@@ -76,7 +76,7 @@ class ContainerController extends AbstractController
      */
     public function product(ContainerManager $containerManager)
     {
-        $products = $containerManager->findAllProducts();
+        $products = $containerManager->findAll("Product");
 
         return $this->render('container/products.html.twig', [
             'products' => $products,
@@ -88,7 +88,7 @@ class ContainerController extends AbstractController
      */
     public function oneProduct($id, ContainerManager $containerManager)
     {
-        $product = $containerManager->findOneProduct($id);
+        $product = $containerManager->findOne($id, "Product");
 
         return $this->render('container/oneproduct.html.twig', [
             'product' => $product,

@@ -19,47 +19,17 @@ class ContainerManager
         $this->em = $em;
     }
 
-    public function findAllContainer($entity)
+    public function findAll($entity)
     {
         $containerRepository =  $this->em->getRepository('App:'.$entity);
 
         return $containerRepository->findAll();
     }
 
-    public function findOneContainer($id)
+    public function findOne($id, $entity)
     {
-        $containerRepository =  $this->em->getRepository('App:Container');
+        $containerRepository =  $this->em->getRepository('App:'.$entity);
 
         return $containerRepository->findOneBy(array('id' => $id));
-    }
-
-    public function findAllContainership()
-    {
-        $containerRepository =  $this->em->getRepository('App:Containership');
-
-        return $containerRepository->findAll();
-    }
-
-    public function findOneContainership($id)
-    {
-        $var = "Containership";
-        $containershipRepository =  $this->em->getRepository('App:'.$var);
-
-        return $containershipRepository->findOneBy(array('id' => $id));
-    }
-
-    public function findAllProducts()
-    {
-        $productRepository =  $this->em->getRepository('App:Product');
-
-        return $productRepository->findAll();
-    }
-
-    public function findOneProduct($id)
-    {
-
-        $productRepository =  $this->em->getRepository('App:Product');
-
-        return $productRepository->findOneBy(array('id' => $id));
     }
 }
