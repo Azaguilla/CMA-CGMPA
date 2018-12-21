@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Container{% endblock %}
+
+{% block body %}
+    {% for containership in listContainer %}
+        <p>{{ containership.id }} {{ containership.name }} <a href="containership/{{ containership.id }}">Voir</a></p>
+    {% endfor %}
+{% endblock %}

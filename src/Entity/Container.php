@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Container
  *
  * @ORM\Table(name="container", uniqueConstraints={@ORM\UniqueConstraint(name="CONTAINER_ID_uindex", columns={"ID"})}, indexes={@ORM\Index(name="CONTAINER_CONTAINER_MODEL_ID_fk", columns={"CONTAINER_MODEL_ID"}), @ORM\Index(name="CONTAINER_CONTAINERSHIP_ID_fk", columns={"CONTAINERSHIP_ID"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\ContainerRepository")
  */
 class Container
 {
@@ -83,7 +83,7 @@ class Container
     /**
      * @return \Containership
      */
-    public function getContainership(): \Containership
+    public function getContainership(): Containership
     {
         return $this->containership;
     }
@@ -91,7 +91,7 @@ class Container
     /**
      * @param \Containership $containership
      */
-    public function setContainership(\Containership $containership): void
+    public function setContainership(Containership $containership): void
     {
         $this->containership = $containership;
     }
@@ -99,7 +99,7 @@ class Container
     /**
      * @return \ContainerModel
      */
-    public function getContainerModel(): \ContainerModel
+    public function getContainerModel(): ContainerModel
     {
         return $this->containerModel;
     }
@@ -107,7 +107,7 @@ class Container
     /**
      * @param \ContainerModel $containerModel
      */
-    public function setContainerModel(\ContainerModel $containerModel): void
+    public function setContainerModel(ContainerModel $containerModel): void
     {
         $this->containerModel = $containerModel;
     }
