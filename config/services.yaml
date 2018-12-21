@@ -30,3 +30,7 @@ services:
     App\Services\ContainerManager:
         class: App\Services\ContainerManager
         arguments: ['@doctrine.orm.entity_manager']
+
+    App\Services\LimitService:
+        class: App\Services\LimitService
+        arguments: ['@doctrine.orm.entity_manager']

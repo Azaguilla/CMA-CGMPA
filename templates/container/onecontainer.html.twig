@@ -1,8 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Container{% endblock %}
+{% block title %}Conteneur {{ container.id }}{% endblock %}
 
 {% block body %}
-        <p>{{ container.id }} {{ container.containerModel.name }} {{ container.containership.name }} </p>
-    <p>{{ container.containerModel.length }}</p>
+    <h1>Détails du Conteneur {{ container.id }}</h1>
+    <p>Détails : {{ container.id }} {{ container.containerModel.name }} {{ container.containership.name }} </p>
+    <p>Dimensions : {{ container.containerModel.length }} {{ container.containerModel.width }} {{ container.containerModel.height }}</p>
 {% endblock %}

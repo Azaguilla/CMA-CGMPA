@@ -1,8 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Container{% endblock %}
+{% block title %}Conteneurs{% endblock %}
 
 {% block body %}
+
+    <h1>Liste des conteneurs</h1>
+
     {% for container in listContainer %}
         <p>{{ container.id }} {{ container.containerModel.name }} {{ container.containership.name }} <a href="container/{{ container.id }}">Voir</a></p>
     {% endfor %}

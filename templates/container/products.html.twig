@@ -1,8 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Container{% endblock %}
+{% block title %}Produits{% endblock %}
 
 {% block body %}
+    <h1>Liste des produits</h1>
     {% for product in products %}
         <p>{{ product.id }} <a href="product/{{ product.id }}">Voir</a></p>
     {% endfor %}
